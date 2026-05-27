@@ -6,9 +6,19 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green?logo=mongodb)](https://mongodb.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 [![GitHub](https://img.shields.io/badge/GitHub-Vipin--Gupta--07-181717?logo=github)](https://github.com/Vipin-Gupta-07)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-FF6B35?logo=vercel)](https://veerji-chaap-food-delivery.vercel.app)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?logo=vercel)](https://veerji-chaap-food-delivery.vercel.app)
 
 A **fully production-ready** food delivery website for **Veer Ji Malai Chaap Wale**, F Block, Noida.
 Built with Next.js 14, Tailwind CSS, Framer Motion, Zustand, and MongoDB.
+
+---
+
+## 🌐 Live Demo
+
+👉 **[https://veerji-chaap-food-delivery.vercel.app](https://veerji-chaap-food-delivery.vercel.app)**
+
+💻 **GitHub:** [https://github.com/Vipin-Gupta-07/veerji-food-delivery](https://github.com/Vipin-Gupta-07/veerji-food-delivery)
 
 ---
 
@@ -98,7 +108,7 @@ veerji-food-delivery/
 ### 1. Clone & Install
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Vipin-Gupta-07/veerji-food-delivery.git
 cd veerji-food-delivery
 npm install
 ```
@@ -148,9 +158,9 @@ Open [http://localhost:3000](http://localhost:3000)
 
 1. Go to [MongoDB Atlas](https://cloud.mongodb.com/)
 2. Create a free cluster (M0)
-3. Create a database user (e.g. `veerji` / strong password)
+3. Create a database user
 4. Allow IP access: Add `0.0.0.0/0` for development
-5. Get connection string: Click **Connect → Connect your application**
+5. Get connection string: Click **Connect → Drivers**
 6. Paste into `.env.local` as `MONGODB_URI`
 
 ---
@@ -163,16 +173,10 @@ Open [http://localhost:3000](http://localhost:3000)
 npm run scrape
 ```
 
-This runs `scripts/scraper.js` using Puppeteer headless Chrome.
-- Output: `scripts/scraped-data.json`
-- **Note**: Swiggy uses heavy bot detection. The scraper may fail.
-- If scraping fails, use pre-extracted data with `npm run seed` (recommended).
-
 ### Alternatively — Seed via API
 
-After starting the dev server:
 ```bash
-curl -X POST http://localhost:3000/api/scrape-swiggy
+curl -X POST https://veerji-chaap-food-delivery.vercel.app/api/scrape-swiggy
 ```
 
 ---
@@ -185,7 +189,7 @@ curl -X POST http://localhost:3000/api/scrape-swiggy
 git init
 git add .
 git commit -m "initial commit"
-git remote add origin https://github.com/your-username/veerji-food-delivery.git
+git remote add origin https://github.com/Vipin-Gupta-07/veerji-food-delivery.git
 git push -u origin main
 ```
 
@@ -193,15 +197,14 @@ git push -u origin main
 
 1. Go to [vercel.com](https://vercel.com) → **New Project**
 2. Import your GitHub repository
-3. Framework: **Next.js** (auto-detected)
+3. Framework: **Next.js**
 
 ### 3. Set Environment Variables on Vercel
 
-In Vercel Dashboard → Project → Settings → Environment Variables:
 ```
-MONGODB_URI        = mongodb+srv://...
-JWT_SECRET         = your-secret-key
-NEXT_PUBLIC_APP_URL = https://your-app.vercel.app
+MONGODB_URI         = mongodb+srv://...
+JWT_SECRET          = your-secret-key
+NEXT_PUBLIC_APP_URL = https://veerji-chaap-food-delivery.vercel.app
 ```
 
 ### 4. Deploy
@@ -214,39 +217,42 @@ Click **Deploy**. Your app is live! 🎉
 
 ### Menu
 ```
-GET  /api/menu              → All available menu items
-GET  /api/menu?category=xyz → Items by category
-GET  /api/menu?search=chaap → Search items
-POST /api/menu              → Create item (admin)
-GET  /api/menu/:id          → Single item
-PUT  /api/menu/:id          → Update item (admin)
-DELETE /api/menu/:id        → Delete item (admin)
+GET    /api/menu              → All available menu items
+GET    /api/menu?category=xyz → Items by category
+GET    /api/menu?search=chaap → Search items
+POST   /api/menu              → Create item (admin)
+GET    /api/menu/:id          → Single item
+PUT    /api/menu/:id          → Update item (admin)
+DELETE /api/menu/:id          → Delete item (admin)
 ```
 
 ### Orders
 ```
-POST /api/orders            → Place order
-GET  /api/orders            → Get orders (auth required)
-GET  /api/orders/:orderId   → Get single order by orderId
-PATCH /api/orders/:orderId  → Update order status (admin)
+POST  /api/orders            → Place order
+GET   /api/orders            → Get orders (auth required)
+GET   /api/orders/:orderId   → Get single order by orderId
+PATCH /api/orders/:orderId   → Update order status (admin)
 ```
 
 ### Auth
 ```
-POST /api/auth/signup       → Register user
-POST /api/auth/login        → Login user
+POST /api/auth/signup  → Register user
+POST /api/auth/login   → Login user
+POST /api/auth/logout  → Logout user
+GET  /api/auth/me      → Get current user
 ```
 
 ### Admin (JWT required, role=admin)
 ```
-GET  /api/admin/menu        → All menu items
-POST /api/admin/menu        → Create item
-GET  /api/admin/orders      → All orders + stats
+GET  /api/admin/menu    → All menu items
+POST /api/admin/menu    → Create item
+GET  /api/admin/orders  → All orders + stats
 ```
 
 ### Utility
 ```
-POST /api/scrape-swiggy     → Seed database from extracted data
+POST /api/scrape-swiggy → Seed database from extracted data
+GET  /api/health        → Health check + DB status
 ```
 
 ---
@@ -259,7 +265,7 @@ POST /api/scrape-swiggy     → Seed database from extracted data
 - 🔍 Real-time search across items
 - 🛒 Add to cart / remove / quantity update
 - 📱 Cart sidebar (desktop) + bottom bar (mobile)
-- 💳 Checkout with address form + payment selection (COD/UPI/Card demo)
+- 💳 Checkout with address form + payment (COD/UPI/Card)
 - ✅ Order success page with live tracking UI
 - 🔐 Login / Signup with JWT auth
 
@@ -285,11 +291,11 @@ POST /api/scrape-swiggy     → Seed database from extracted data
 ## 🎨 Design System
 
 ```
-Brand Orange:     #FF6B35
-Brand Orange Dark:#E85520
-Brand Saffron:    #F59E0B
-Brand Dark:       #1A1A1A
-Brand Cream:      #FFF8F0
+Brand Orange:      #FF6B35
+Brand Orange Dark: #E85520
+Brand Saffron:     #F59E0B
+Brand Dark:        #1A1A1A
+Brand Cream:       #FFF8F0
 
 Display Font: Baloo 2 (headings)
 Body Font:    Nunito (paragraphs)
@@ -338,6 +344,15 @@ Pull requests welcome! Please open an issue first for major changes.
 MIT — for demo/educational use only.
 Restaurant data © Veer Ji Malai Chaap Wale. Used without permission for demo only.
 Images from [Unsplash](https://unsplash.com) (free to use).
+
+---
+
+## 🌐 Links
+
+| | |
+|---|---|
+| 🚀 Live Site | [https://veerji-chaap-food-delivery.vercel.app](https://veerji-chaap-food-delivery.vercel.app) |
+| 💻 GitHub | [https://github.com/Vipin-Gupta-07/veerji-food-delivery](https://github.com/Vipin-Gupta-07/veerji-food-delivery) |
 
 ---
 
