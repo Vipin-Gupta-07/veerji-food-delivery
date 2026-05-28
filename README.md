@@ -150,7 +150,7 @@ Demo accounts:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open (https://veerji-chaap-food-delivery.vercel.app/)
 
 ---
 
