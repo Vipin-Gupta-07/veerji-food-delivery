@@ -12,7 +12,8 @@
 A **fully production-ready** food delivery website for **Veer Ji Malai Chaap Wale**, F Block, Noida.
 Built with Next.js 14, Tailwind CSS, Framer Motion, Zustand, and MongoDB.
 
---------
+----
+
 
 ## 🌐 Live Demo
 
