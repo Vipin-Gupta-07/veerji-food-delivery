@@ -1,13 +1,6 @@
 # 🍢 Veer Ji Malai Chaap Wale — Food Delivery Website
 
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8?logo=tailwindcss)](https://tailwindcss.com)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green?logo=mongodb)](https://mongodb.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
-[![GitHub](https://img.shields.io/badge/GitHub-Vipin--Gupta--07-181717?logo=github)](https://github.com/Vipin-Gupta-07)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-FF6B35?logo=vercel)](https://veerji-chaap-food-delivery.vercel.app)
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?logo=vercel)](https://veerji-chaap-food-delivery.vercel.app)
+
 
 A **fully production-ready** food delivery website for **Veer Ji Malai Chaap Wale**, F Block, Noida.
 Built with Next.js 14, Tailwind CSS, Framer Motion, Zustand, and MongoDB.
