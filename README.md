@@ -157,7 +157,7 @@ Open (https://veerji-chaap-food-delivery.vercel.app/)
 5. Get connection string: Click **Connect → Drivers**
 6. Paste into `.env.local` as `MONGODB_URI`
 
----
+--------
 
 ## 🕷️ Scraping Data from Swiggy
 
